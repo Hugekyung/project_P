@@ -65,7 +65,7 @@ ROOT_URLCONF = 'project_P.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # templates 경로를 django에게 알려준다.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
