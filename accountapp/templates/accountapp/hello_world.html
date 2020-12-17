@@ -6,6 +6,17 @@
         <h1>
             testing
         </h1>
+
+        <form action="/account/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="POST">
+            <!-- "btn btn-primary"는 bootstrap에서 자동으로 css를 꾸며주는 역할을 해준다. -->
+        </form>
+
+        <h1>
+            {{ text }}
+        </h1>
+
     </div>
 
 {% endblock %}
