@@ -1,0 +1,16 @@
+.logo {
+    font-family: 'Anton', sans-serif;
+}
+
+.footer_button {
+    font-size: .6rem;
+}
+
+.footer {
+    text-align: center; margin-top: 2rem;
+    font-family: 'Anton', sans-serif;
+}
+
+.header {
+    text-align: center; margin: 2rem 0;
+}

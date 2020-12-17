@@ -129,3 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# 컨트롤+b 해당 변수가 선언되어 있는 위치로 이동
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
