@@ -13,4 +13,27 @@
     <!--  DEFALUT CSS LINK  -->
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <!--  setting.py에 있는 STATIC_URLS의 주소와 'base.css'주소가 연결되어 최종 주소로써 전달된다.  -->
+
+    <style>
+        @font-face {
+            font-family: 'NanumSquareRoundOTFB';
+            src: local('NanumSquareRoundOTFB'),
+            url("{% static 'font/NanumSquareRoundOTFB.otf' %}") format("opentype");
+        }
+        @font-face {
+            font-family: 'NanumSquareRoundOTFEB';
+            src: local('NanumSquareRoundOTFEB'),
+            url("{% static 'font/NanumSquareRoundOTFEB.otf' %}") format("opentype");
+        }
+        @font-face {
+            font-family: 'NanumSquareRoundOTFL';
+            src: local('NanumSquareRoundOTFL'),
+            url("{% static 'font/NanumSquareRoundOTFL.otf' %}") format("opentype");
+        }
+        @font-face {
+            font-family: 'NanumSquareRoundOTFR';
+            src: local('NanumSquareRoundOTFR'),
+            url("{% static 'font/NanumSquareRoundOTFR.otf' %}") format("opentype");
+        }
+    </style>
 </head>
