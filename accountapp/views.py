@@ -34,3 +34,5 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world') # 성공 시 연결할 url
     # reverse를 클래스 내에서 그대로 사용할 수 없다(에러남)
     template_name = 'accountapp/create.html' # 어느 화면을 볼지
+
+# login과 logout은 따로 클래스 지정 없이 바로 urls.py에서 import해주면 된다.

@@ -5,7 +5,7 @@
  <div style="text-align: center">
      <form action="{% url 'accountapp:create' %}" method="post"> <!-- accountapp 내 create로 라우팅 -->
         {% csrf_token %}
-         {{ form }}
+        {{ form }}
         <input type="submit" class="btn btn-primary">
      </form>
  </div>
