@@ -9,7 +9,6 @@
         <div>
             <form action="{% url 'accountapp:login' %}" method="post">
                 {% csrf_token %}
-<!--                {{ form }}-->
                 {% bootstrap_form form %}
                 <input type="submit" class="btn btn-dark rounded-pill col-4 mt-3">
                 <!-- col-6: 너비 12(부모의 전체 너비)가 100%이므로, 6은 50% 길이를 뜻함. //mt-3: margin-top 기존 크기의 3배 -->

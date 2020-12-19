@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accountapp.models import HelloWorld
 
@@ -36,3 +36,8 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html' # 어느 화면을 볼지
 
 # login과 logout은 따로 클래스 지정 없이 바로 urls.py에서 import해주면 된다.
+
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user' # 다른 유저가 내 페이지에 왔을 때, target_user인 나의 정보를 보여주도록
+    template_name = 'accountapp/detail.html'

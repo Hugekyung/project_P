@@ -3,14 +3,17 @@
 }
 
 .footer_button {
-    font-size: .8rem;
+    font-size: 3rem;
 }
 
 .footer {
-    text-align: center; margin-top: 3rem;
+    text-align: center;
+    margin-top: 3rem;
     font-family: 'Anton', sans-serif;
 }
 
 .header {
     text-align: center; margin: 2rem 0;
 }
+
+/* 이거 왜 적용이 안되지.. */
