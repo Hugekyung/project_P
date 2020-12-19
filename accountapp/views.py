@@ -6,8 +6,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 
+from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
 
@@ -41,3 +42,10 @@ class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user' # 다른 유저가 내 페이지에 왔을 때, target_user인 나의 정보를 보여주도록
     template_name = 'accountapp/detail.html'
+
+class AccountUpdateView(UpdateView):
+    model = User
+    form_class = AccountUpdateForm
+    success_url = reverse_lazy('accountapp:hello_world') # 성공 시 연결할 url
+    # reverse를 클래스 내에서 그대로 사용할 수 없다(에러남)
+    template_name = 'accountapp/update.html' # 어느 화면을 볼지

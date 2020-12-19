@@ -11,6 +11,15 @@
           <h2 style="font-family: 'NanumSquareRoundOTFEB';">
               {{ target_user.username }}
           </h2>
+
+          <!-- 유저 정보 업데이트 페이지로 이동하기 위한 코드 -->
+          {% if target_user == user %}
+          <a href="{% url 'accountapp:update' pk=user.pk %}">
+              <p>
+                  Change Info
+              </p>
+          </a>
+          {% endif %}
       </div>
   </div>
 
