@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'accountapp', # 새로 추가된 앱을 작성해줘야 사용할 수 있다.
+    'profileapp',
 ]
 
 MIDDLEWARE = [
@@ -145,4 +146,4 @@ LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/' # 미디어 파일을 보기 위한 주소
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 파일 디렉토리 내 이미지 파일이 저장되는 경로
