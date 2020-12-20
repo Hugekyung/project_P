@@ -8,9 +8,18 @@
           <p>
               {{ target_user.date_joined }}
           </p>
+
+          {% if target_user.profile %}
           <h2 style="font-family: 'NanumSquareRoundOTFEB';">
-              {{ target_user.username }}
+              {{ target_user.profile.nickname }}
           </h2>
+          {% else %}
+          <a href="{% url 'profileapp:create' %}">
+              <h2 style="font-family: 'NanumSquareRoundOTFEB';">
+                  Create Profile
+              </h2>
+          </a>
+          {% endif %}
 
           <!-- 유저 정보 업데이트 페이지로 이동하기 위한 코드 -->
           {% if target_user == user %}
