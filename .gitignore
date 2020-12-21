@@ -79,3 +79,5 @@ db.sqlite3
 __pycache__/
 # venv/ 폴더도 gitignore에 포함
 # gitignore에 포함하면, git에서 추적하지 않는다.
+
+media/

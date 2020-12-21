@@ -13,7 +13,6 @@ from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
-
 has_ownership = [account_ownership_required, login_required]
 
 @login_required # 비login 상태일 때 hello_world 페이지에 접속하면 login.html로 이동하게 하는 Decorator
