@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')), # accountapp안의 urls 파일을 참고해서 분기하게 한다.
     path('profiles/', include('profileapp.urls')), # project_P.urls: profiles + profileapp.urls: create ==> profiles/create/: 프로필 생성 화면으로 이동
+    path('articles/', include('articleapp.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # image를 가져오기 위한 라우팅 설정

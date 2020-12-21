@@ -41,7 +41,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# 사용할 app(폴더명) 이름 목록
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accountapp', # 새로 추가된 앱을 작성해줘야 사용할 수 있다.
     'profileapp',
+    'articleapp',
 ]
 
 MIDDLEWARE = [
