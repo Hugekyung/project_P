@@ -5,13 +5,15 @@
 
   <div>
       <div style="text-align: center; max-width: 500x; margin: 4rem auto;">
-          <p>
-              {{ target_user.date_joined }}
-          </p>
+
+          <img src="{{ target_user.profile.image.url }}" alt="프로필사진" style="border-radius: 10rem; margin-bottom: 1rem;">
 
           {% if target_user.profile %}
           <h2 style="font-family: 'NanumSquareRoundOTFEB';">
               {{ target_user.profile.nickname }}
+              <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" style="font-size: .9rem;">
+                  edit
+              </a>
           </h2>
           {% else %}
           <a href="{% url 'profileapp:create' %}">
@@ -20,6 +22,10 @@
               </h2>
           </a>
           {% endif %}
+
+          <h5 style="margin-bottom: 3rem;">
+              {{ target_user.profile.message }}
+          </h5>
 
           <!-- 유저 정보 업데이트 페이지로 이동하기 위한 코드 -->
           {% if target_user == user %}
