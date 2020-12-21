@@ -7,7 +7,7 @@
      <div class="mb-4"> <!-- mb-4: margin-bottom 4배 -->
          <h4><b>Sign Up</b></h4>
      </div>
-     <form action="{% url 'accountapp:create %}" method="post"> <!-- accountapp 내 create로 라우팅 -->
+     <form action="{% url 'accountapp:create' %}" method="post"> <!-- accountapp 내 create로 라우팅 -->
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-dark rounded-pill col-6 mt-4">
