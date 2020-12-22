@@ -122,13 +122,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False # 내가 설정한 TIME_ZONE의 시간과 날짜를 표시하려면 False로 지정해야 한다.
 
 
 # Static files (CSS, JavaScript, Images)
