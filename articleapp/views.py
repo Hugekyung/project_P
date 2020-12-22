@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
 
 from articleapp.decorators import article_ownership_required
 from articleapp.forms import ArticleCreationForm
@@ -52,3 +52,10 @@ class ArticleDeleteView(DeleteView):
     context_object_name = 'target_article'
     success_url = reverse_lazy('articleapp:list')
     template_name = 'articleapp/delete.html'
+
+
+class ArticleListView(ListView):
+    model = Article
+    context_object_name = 'article_list' # html내에서 불러올 때 사용될 이름
+    template_name = 'articleapp/list.html' # 템플릿 경로(이름)
+    paginate_by = 25 # 한 페이지 내 게시물 수 제한

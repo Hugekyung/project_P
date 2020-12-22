@@ -4,24 +4,33 @@
 {% block content %}
 
   <div>
-      <div style="text-align: center; max-width: 500x; margin: 4rem auto;">
+      <div style="text-align: center; max-width: 600px; margin: 4rem auto;">
 
           <h1>
               {{ target_article.title }}
           </h1>
+          <h3 style="margin-bottom: 2rem;">
+              {{ target_article.writer.profile.nickname }} <!-- 닉네임이 없는 경우는 어떻게 처리할지? -->
+          </h3>
+          <hr>
 
-          <img src="{{ target_article.image.url }}" alt="">
+          <img style="width: 100%; border-radius: 1rem;" src="{{ target_article.image.url }}" alt="">
 
           <p>
               {{ target_article.content }}
           </p>
 
-          <a href="{% url 'articleapp:update' pk=target_article.pk %}">
-              <p>Update Article</p>
+          {% if target_article.writer == user %} <!-- 게시물 작성자가 유저일 경우만 보여준다. -->
+          <a href="{% url 'articleapp:update' pk=target_article.pk %}"
+          class="btn btn-primary rounded-pill col-3">
+              Update
           </a>
-          <a href="{% url 'articleapp:delete' pk=target_article.pk %}">
-              <p>Delete Article</p>
+          <a href="{% url 'articleapp:delete' pk=target_article.pk %}"
+          class="btn btn-danger rounded-pill col-3">
+              Delete
           </a>
+          {% endif %}
+          <hr>
 
       </div>
   </div>
