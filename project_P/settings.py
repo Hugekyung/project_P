@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'accountapp', # 새로 추가된 앱을 작성해줘야 사용할 수 있다.
     'profileapp',
     'articleapp',
+    'commentapp',
 ]
 
 MIDDLEWARE = [

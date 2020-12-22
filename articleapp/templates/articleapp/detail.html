@@ -9,14 +9,14 @@
           <h1>
               {{ target_article.title }}
           </h1>
-          <h3 style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1rem;">
               {{ target_article.writer.profile.nickname }} <!-- 닉네임이 없는 경우는 어떻게 처리할지? -->
           </h3>
           <hr>
 
           <img style="width: 100%; border-radius: 1rem;" src="{{ target_article.image.url }}" alt="">
 
-          <p>
+          <p style="margin-top: 1rem;">
               {{ target_article.content }}
           </p>
 
@@ -31,6 +31,8 @@
           </a>
           {% endif %}
           <hr>
+
+          {% include 'commentapp/create.html' with article=target_article %} <!-- commentapp폴더 내 create.html파일에 article정보를 보낸다 -->
 
       </div>
   </div>
