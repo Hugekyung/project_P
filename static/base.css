@@ -16,4 +16,9 @@
     text-align: center; margin: 2rem 0;
 }
 
+@media screen and (max-width:500px) {  /* 스크린의 max-width가 500px이하로 내려가면 적용되는 것 */
+    html {
+        font-size: 13px;
+    }
+}
 /* 이거 왜 적용이 안되지.. */
