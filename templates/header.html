@@ -3,25 +3,26 @@
     <div>
         <h1 class="logo">Project_P</h1>
     </div>
-    <div>
-        <a href="{% url 'articleapp:list' %}">
+    <div class="project_p_header">
+        <a href="{% url 'articleapp:list' %}" class="project_p_header">
             <span>Articles</span>
         </a>
-        <span>nav2</span>
-        <span>nav3</span>
+        <a href="{% url 'projectapp:list' %}" class="project_p_header">
+            <span>Projects</span>
+        </a>
 
         {% if not user.is_authenticated %}
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="project_p_header">
             <span>Login</span>
         </a>
-        <a href="{% url 'accountapp:create' %}">
+        <a href="{% url 'accountapp:create' %}" class="project_p_header">
             <span>Sign up</span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+        <a href="{% url 'accountapp:detail' pk=user.pk %}" class="project_p_header">
             <span>MyPage</span>
         </a>
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="project_p_header">
             <span>Logout</span>
         </a>
         {% endif %}

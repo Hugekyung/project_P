@@ -24,5 +24,6 @@ urlpatterns = [
     path('profiles/', include('profileapp.urls')), # project_P.urls: profiles + profileapp.urls: create ==> profiles/create/: 프로필 생성 화면으로 이동
     path('articles/', include('articleapp.urls')),
     path('comments/', include('commentapp.urls')),
+    path('projects/', include('projectapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # image를 가져오기 위한 라우팅 설정

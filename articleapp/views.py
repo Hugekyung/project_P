@@ -20,7 +20,7 @@ class ArticleCreateView(CreateView):
     form_class = ArticleCreationForm
     template_name = 'articleapp/create.html' # 오차 조심하자!!! 'articleapp/create.html' 라우팅 경로이기 때문에 중간에 /(슬래쉬)를 넣는다.
 
-    def form_valid(self, form):
+    def form_valid(self, form): # 이거 만드는 이유? 역할?
         temp_article = form.save(commit=False)
         temp_article.writer = self.request.user
         temp_article.save()
@@ -61,4 +61,4 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'article_list' # html내에서 불러올 때 사용될 이름
     template_name = 'articleapp/list.html' # 템플릿 경로(이름)
-    paginate_by = 25 # 한 페이지 내 게시물 수 제한
+    paginate_by = 5 # 한 페이지 내 게시물 수 제한
