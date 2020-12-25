@@ -25,5 +25,6 @@ urlpatterns = [
     path('articles/', include('articleapp.urls')),
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
+    path('subscriptions/', include('subscriptionapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # image를 가져오기 위한 라우팅 설정
