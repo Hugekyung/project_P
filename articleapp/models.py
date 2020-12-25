@@ -2,9 +2,12 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+from projectapp.models import Project
+
 
 class Article(models.Model):
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True) # on_delete=models.SET_NULL: 게시자가 탈퇴해도 글이 사라지지 않고 남아 있도록 한다.
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='article', null=True)
 
     title = models.CharField(max_length=200, null=True)
     image = models.ImageField(upload_to='article/', null=False)

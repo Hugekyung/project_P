@@ -8,10 +8,12 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
+from articleapp.models import Article
 
 has_ownership = [account_ownership_required, login_required]
 
@@ -42,10 +44,16 @@ class AccountCreateView(CreateView):
 
 # login과 logout은 따로 클래스 지정 없이 바로 urls.py에서 import해주면 된다.
 
-class AccountDetailView(DetailView):
+class AccountDetailView(DetailView, MultipleObjectMixin):
     model = User
     context_object_name = 'target_user' # 다른 유저가 내 페이지에 왔을 때, target_user인 나의 정보를 보여주도록
     template_name = 'accountapp/detail.html'
+    
+    paginate_by = 25
+    
+    def get_context_data(self, **kwargs):
+        object_list = Article.objects.filter(writer=self.get_object())
+        return super(AccountDetailView, self).get_context_data(object_list=object_list, **kwargs)
 
 
 @method_decorator(has_ownership, 'get')
