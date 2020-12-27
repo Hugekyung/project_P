@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap4 %}
 
 {% block content %}
 
@@ -16,9 +16,9 @@
 
           <img style="width: 100%; border-radius: 1rem;" src="{{ target_article.image.url }}" alt="">
 
-          <p style="margin-top: 1rem;">
-              {{ target_article.content }}
-          </p>
+          <div style="text-align: left;">
+              {{ target_article.content | safe }} <!--태그같은 것들은 제외되고 내용만 나오도록 필터-->
+          </div>
 
           {% if target_article.writer == user %} <!-- 게시물 작성자가 유저일 경우만 보여준다. -->
           <a href="{% url 'articleapp:update' pk=target_article.pk %}"
