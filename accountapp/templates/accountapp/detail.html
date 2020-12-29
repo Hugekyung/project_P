@@ -15,8 +15,10 @@
           <h2 style="font-family: 'NanumSquareRoundOTFEB';">
               {{ target_user.profile.nickname }}
                   {% if target_user == user %}
-                  <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" style="font-size: .9rem;">
-                      edit
+                  <a class="material-icons"
+                     style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem"
+                      href="{% url 'profileapp:update' pk=target_user.profile.pk %}" style="font-size: .9rem;">
+                      edit<!--box-shadow: 위치 위치 크기 색상// material-icons에서 해당하는 아이콘의 이름을 넣어줘야 제대로 나온다-->
                   </a>
                   {% endif %}
           </h2>
@@ -39,15 +41,15 @@
 
           <!-- 유저 정보 업데이트 페이지로 이동하기 위한 코드 -->
           {% if target_user == user %}
-          <a href="{% url 'accountapp:update' pk=user.pk %}">
-              <p>
-                  Change Info
-              </p>
+          <a class="material-icons"
+             style="box-shadow: 0 0 3px #ccc; border-radius: 1rem; padding: .4rem; margin-right: 10px;"
+             href="{% url 'accountapp:update' pk=user.pk %}">
+                  settings
           </a>
-          <a href="{% url 'accountapp:delete' pk=user.pk %}">
-              <p>
-                  Quit
-              </p>
+          <a class="material-icons"
+             style="box-shadow: 0 0 3px red; border-radius: 1rem; padding: .4rem"
+             href="{% url 'accountapp:delete' pk=user.pk %}">
+                  delete
           </a>
           {% endif %}
       </div>

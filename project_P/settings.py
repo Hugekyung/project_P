@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/' # 미디어 파일을 보기 위한 주소

@@ -18,7 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from articleapp.views import ArticleListView
+
 urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'), # 기본주소일 때 보여줄 화면
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')), # accountapp안의 urls 파일을 참고해서 분기하게 한다.
     path('profiles/', include('profileapp.urls')), # project_P.urls: profiles + profileapp.urls: create ==> profiles/create/: 프로필 생성 화면으로 이동

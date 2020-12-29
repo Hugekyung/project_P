@@ -12,28 +12,11 @@ from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
-from accountapp.models import HelloWorld
 from articleapp.models import Article
 
 has_ownership = [account_ownership_required, login_required]
 
-@login_required # 비login 상태일 때 hello_world 페이지에 접속하면 login.html로 이동하게 하는 Decorator
-def hello_world(request):
-
-    if request.method == "POST":
-
-        temp = request.POST.get('hello_world_input') # hello_world_input에 작성된 내용을 temp에 담는다
-
-        new_hello_world = HelloWorld()
-        new_hello_world.text = temp
-        new_hello_world.save() # db에 저장한다
-
-        return HttpResponseRedirect(reverse('accountapp:hello_world')) # accountapp안에 있는 hello_world의 url로 다시 돌아간다
-    else:
-        hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list}) # request를 받아서 내용을 base.html파일에서 가져온다.
-        # return HttpResponse('안녕하세요') # 해당 모듈이 없을 때, alt+enter를 누르면 해당 모듈이 어떤 라이브러리에 있는지 자동으로 찾아준다.
-
+# @login_required 비login 상태일 때 hello_world 페이지에 접속하면 login.html로 이동하게 하는 Decorator
 
 class AccountCreateView(CreateView):
     model = User # 계정 만들기
