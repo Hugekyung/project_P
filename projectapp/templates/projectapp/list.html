@@ -29,7 +29,7 @@
     <div class="container">
         {% for project in project_list %}
         <a href="{% url 'projectapp:detail' pk=project.pk %}">
-            {% include 'snippets/card_project.html' with project=project %} <!-- card.html에서 내용을 가져온다. -->
+            {% include 'snippets/card_project.html' with project=project %} <!-- card_project.html에서 내용을 가져온다. -->
         </a>
         {% endfor %}
     </div>
