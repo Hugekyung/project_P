@@ -21,7 +21,7 @@ has_ownership = [account_ownership_required, login_required]
 class AccountCreateView(CreateView):
     model = User # 계정 만들기
     form_class = UserCreationForm # 계정 회원가입 폼
-    success_url = reverse_lazy('accountapp:hello_world') # 성공 시 연결할 url
+    success_url = reverse_lazy('home') # 성공 시 연결할 url
     # reverse를 클래스 내에서 그대로 사용할 수 없다(에러남)
     template_name = 'accountapp/create.html' # 어느 화면을 볼지
 
@@ -45,7 +45,7 @@ class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('accountapp:hello_world') # 성공 시 연결할 url
+    success_url = reverse_lazy('home') # 성공 시 연결할 url
     # reverse를 클래스 내에서 그대로 사용할 수 없다(에러남)
     template_name = 'accountapp/update.html' # 어느 화면을 볼지
 
