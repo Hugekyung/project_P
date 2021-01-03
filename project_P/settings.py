@@ -138,7 +138,8 @@ USE_TZ = False # 내가 설정한 TIME_ZONE의 시간과 날짜를 표시하려�
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # collectstatic을 했을 때 적용될 경로를 지정
+
 # 컨트롤+b 해당 변수가 선언되어 있는 위치로 이동
 
 STATICFILES_DIRS = [
