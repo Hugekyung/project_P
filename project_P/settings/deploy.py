@@ -18,13 +18,14 @@ environ.Env.read_env(
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*'] # 모든 호스트에 대해서 허용한다.(배포 시에는 다르게 설정해줘야 한다)
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# db 관련 container를 생성할 때 아래 DATABASE의 정보에 맞게 생성해야 한다.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
