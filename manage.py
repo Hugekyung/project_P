@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_P.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_P.settings.local') # local/deploy 분리 시 경로를 다시 설정해줘야 한다.
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
