@@ -25,7 +25,7 @@ ALLOWED_HOSTS = ['*'] # 모든 호스트에 대해서 허용한다.(배포 시�
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# db 관련 container를 생성할 때 아래 DATABASE의 정보에 맞게 생성해야 한다.
+# db 관련 container를 생성할 때 아래 DATABASE의 정보에 맞게 생성해야 한다. 위 주소에서 해당 내용을 가져온다.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
