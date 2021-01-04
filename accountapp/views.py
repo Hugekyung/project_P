@@ -45,7 +45,7 @@ class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('home') # 성공 시 연결할 url
+    success_url = reverse_lazy('accountapp:detail') # 성공 시 연결할 url
     # reverse를 클래스 내에서 그대로 사용할 수 없다(에러남)
     template_name = 'accountapp/update.html' # 어느 화면을 볼지
 
