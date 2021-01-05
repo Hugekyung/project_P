@@ -18,7 +18,7 @@ environ.Env.read_env(
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*'] # 모든 호스트에 대해서 허용한다.(배포 시에는 다르게 설정해줘야 한다)
 
@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['*'] # 모든 호스트에 대해서 허용한다.(배포 시�
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
+        'NAME': 'django', # db의 이름
         'USER': 'django',
         'PASSWORD': 'password1234',
         'HOST': 'mariadb', # network로 연결해 줄 때 container name을 하나의 도메인으로 본다.
