@@ -2,7 +2,7 @@
 from .base import *
 
 def read_secret(secret_name):
-    file = open('/run/secret/' + secret_name)
+    file = open('/run/secrets/' + secret_name)
     secret = file.read()
     secret = secret.rstrip().lstrip()
     file.close()
@@ -26,7 +26,7 @@ environ.Env.read_env(
 SECRET_KEY = read_secret('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*'] # 모든 호스트에 대해서 허용한다.(배포 시에는 다르게 설정해줘야 한다)
 
