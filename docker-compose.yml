@@ -2,13 +2,13 @@ version: "3.7"
 services:
 
   nginx:
-    image: nginx:1.19.5
+    image: nginx:alpine
     networks:
       - network
     volumes:
       - /home/django_course/nginx.conf:/etc/nginx/nginx.conf
-      - static-volume:/data/static
-      - media-volume:/data/media
+      - static-volume:/data/static/
+      - media-volume:/data/media/
     ports:
       - 80:80
 
@@ -17,8 +17,8 @@ services:
     networks:
       - network
     volumes:
-      - static-volume:/data/project_P/staticfiles
-      - media-volume:/data/project_P/media
+      - static-volume:/home/project_P/staticfiles/
+      - media-volume:/home/project_P/media/
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY

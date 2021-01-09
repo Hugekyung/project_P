@@ -29,7 +29,6 @@
         {% for article in article_list %}
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
             {% include 'snippets/card.html' with article=article %} <!-- card.html에서 내용을 가져온다. -->
-            {{ article.title }}
         </a>
         {% endfor %}
     </div>
