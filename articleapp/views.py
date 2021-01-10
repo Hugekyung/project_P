@@ -61,7 +61,7 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'article_list' # html내에서 불러올 때 사용될 이름
     template_name = 'articleapp/list.html' # 템플릿 경로(이름)
-    paginate_by = 5 # 한 페이지 내 게시물 수 제한
+    paginate_by = 10 # 한 페이지 내 게시물 수 제한
 
     def get_context_data(self, **kwargs):
         context = super(ArticleListView, self).get_context_data(**kwargs)

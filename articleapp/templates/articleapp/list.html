@@ -6,7 +6,7 @@
 
 <style>
     .container {
-        padding: 10px;
+        padding: 20px;
         margin: 0, auto;
     }
 
@@ -28,12 +28,13 @@
     }
 
 </style>
+    <div class="article_list">
     {% if article_list %}
     <div class="container">
         {% for article in article_list %}
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
             {% include 'snippets/card.html' with article=article %} <!-- card.html에서 내용을 가져온다. -->
-            {{ article.title }}
+            {{ article.title | truncatechars:8 }}
         </a>
 
         {% endfor %}
@@ -53,7 +54,7 @@
             Create Article
         </a>
     </div>
-
+    </div>
 
 
 {% endblock %}

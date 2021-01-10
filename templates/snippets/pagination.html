@@ -1,39 +1,13 @@
-<!--<div style="text-align: center; margin: 1rem 0;">-->
-<!--    {% if page_obj.has_previous %} &lt;!&ndash; has_previous: 현재 패이지에서 이전 페이지가 존재하는지 여부 불리언 &ndash;&gt;-->
-<!--    <a href="?page={{ page_obj.previous_page_number }}"-->
-<!--        class="btn btn-secondary rounded-pill">-->
-<!--        {{ page_obj.previous_page_number }}-->
-<!--    </a>-->
-<!--    {% endif %}-->
-<!--    <a href="?page={{ page_obj.number }}"-->
-<!--        class="btn btn-dark rounded-pill">-->
-<!--        {{ page_obj.number }}-->
-<!--    </a>-->
-<!--    {% if page_obj.has_next %} &lt;!&ndash; 현재 페이지에서 다음 페이지가 존재하는지 여부 불리언 &ndash;&gt;-->
-<!--    <a href="?page={{ page_obj.next_page_number }}"-->
-<!--        class="btn btn-secondary rounded-pill">-->
-<!--        {{ page_obj.next_page_number }}-->
-<!--    </a>-->
-<!--    {% endif %}-->
-<!--</div>-->
-
 <style>
-  .page  {
-    text-align:center;
+  .pagination {
+    justify-content: center;
+    margin-top: 3rem;
   }
 
-  .disabled {
-    text-align:center;
-  }
-
-  .active {
-    text-align:center;
-  }
 </style>
 
 {% if is_paginated %}
-  <div style="width:100%; text-align:center; margin:0 auto;">
-    <ul class="pagination" style="width:300px; text-align:left;">
+    <ul class="pagination">
       {% if page_obj.has_previous %}
         <li class="page">
           <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary rounded-pill">
@@ -43,15 +17,26 @@
       {% else %}
         <li class="disabled">
           <a href="#" class="btn btn-secondary rounded-pill">
-            <span>Previous</span>
+            <span>Prev</span>
           </a>
         </li>
       {% endif %}
 
       {% for page in page_range %}
-        <li {% if page == page_obj.number %}class="active"{% endif %}>
+<!--        <li {% if page == page_obj.number %}class="active"{% endif %}>-->
+<!--          <a href="?page={{ page }}" class="btn btn-gray rounded-pill">{{ page }}</a>-->
+<!--        </li>-->
+
+      {% if page == page_obj.number %}
+        <li class="active">
+          <a href="?page={{ page }}" class="btn btn-dark rounded-pill">{{ page }}</a>
+        </li>
+      {% else %}
+        <li>
           <a href="?page={{ page }}" class="btn btn-gray rounded-pill">{{ page }}</a>
         </li>
+      {% endif %}
+
       {% endfor %}
 
       {% if page_obj.has_next %}
@@ -68,5 +53,4 @@
         </li>
       {% endif %}
     </ul>
-  </div>
 {% endif %}
