@@ -14,7 +14,7 @@
 
 @media screen and (max-width:500px) {  /* 스크린의 max-width가 500px이하로 내려가면 적용되는 것 */
     html {
-        font-size: 13px;
+        font-size: 1rem;
     }
 }
 
@@ -25,7 +25,7 @@ a {
 
 /* a태그에 마우스를 올려두었을 때 반응하는 형태를 설정 */
 a:hover {
-    color: orange;
+    color: blue;
 }
 
 .project_p_header {

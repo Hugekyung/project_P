@@ -3,7 +3,6 @@
     justify-content: center;
     margin-top: 3rem;
   }
-
 </style>
 
 {% if is_paginated %}
@@ -23,19 +22,16 @@
       {% endif %}
 
       {% for page in page_range %}
-<!--        <li {% if page == page_obj.number %}class="active"{% endif %}>-->
-<!--          <a href="?page={{ page }}" class="btn btn-gray rounded-pill">{{ page }}</a>-->
-<!--        </li>-->
 
-      {% if page == page_obj.number %}
-        <li class="active">
-          <a href="?page={{ page }}" class="btn btn-dark rounded-pill">{{ page }}</a>
-        </li>
-      {% else %}
-        <li>
-          <a href="?page={{ page }}" class="btn btn-gray rounded-pill">{{ page }}</a>
-        </li>
-      {% endif %}
+        {% if page == page_obj.number %}
+          <li class="active">
+            <a href="?page={{ page }}" class="btn btn-outline-primary">{{ page }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="?page={{ page }}" class="btn btn-gray rounded-pill">{{ page }}</a>
+          </li>
+        {% endif %}
 
       {% endfor %}
 
