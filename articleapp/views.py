@@ -18,7 +18,7 @@ from commentapp.forms import CommentCreationForm
 class ArticleCreateView(CreateView):
     model = Article
     form_class = ArticleCreationForm
-    template_name = 'articleapp/create.html' # 오차 조심하자!!! 'articleapp/create.html' 라우팅 경로이기 때문에 중간에 /(슬래쉬)를 넣는다.
+    template_name = 'articleapp/create.html' # 오타 조심하자!!! 'articleapp/create.html' 라우팅 경로이기 때문에 중간에 /(슬래쉬)를 넣는다.
 
     def form_valid(self, form): # 이거 만드는 이유? 역할?
         temp_article = form.save(commit=False)
