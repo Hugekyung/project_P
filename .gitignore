@@ -84,3 +84,6 @@ media/
 
 nginx.conf
 docker-compose.yml
+
+# aws에서 받은 pem키
+aws_project_P_key.pem
