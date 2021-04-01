@@ -7,5 +7,5 @@
 3. gabia-AWS를 통한 도메인 연동 및 서비스 배포
 4. docker-portainer / docker swarm을 활용한 서비스 배포
 
-## 완성된 서비스
+## 완성된 서비스(AWS 서비스 비용발생 때문에 현재는 닫음)
 www.project-p.shop
