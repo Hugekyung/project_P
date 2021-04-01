@@ -9,3 +9,13 @@
 
 ## 완성된 서비스(AWS 서비스 비용발생 때문에 현재는 닫음)
 www.project-p.shop
+
+## 서비스 이미지
+1. home
+![home](https://user-images.githubusercontent.com/67989121/113272761-f261ee80-9316-11eb-9156-5ec1b8de3557.jpg)
+
+2. myPage
+![myPage2](https://user-images.githubusercontent.com/67989121/113273977-225dc180-9318-11eb-98bb-3460bd761bb0.jpg)
+
+3. articleDetail
+![articleDetail](https://user-images.githubusercontent.com/67989121/113272859-09a0dc00-9317-11eb-96dd-94ac0d80569e.jpg)
